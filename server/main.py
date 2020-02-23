@@ -1,6 +1,6 @@
 from sanic import Sanic
 
-from routes import add_routes
+from server.routes import add_routes
 
 
 def main():
