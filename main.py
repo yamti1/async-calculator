@@ -4,9 +4,9 @@ from sanic.response import json, text
 app = Sanic("My App")
 
 
-@app.route("/")
-async def root(_request):
-    return text("Hello World!")
+@app.route("/add")
+async def root(request):
+    return text(sum(request.json))
 
 
 if __name__ == '__main__':
