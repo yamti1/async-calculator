@@ -1,11 +1,11 @@
 from sanic.response import json
 
 
-def add(request):
+async def add(request):
     return json(sum(request.json))
 
 
-def sub(request):
+async def sub(request):
     a, b = request.json
     return json(a - b)
 
