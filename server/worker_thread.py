@@ -7,7 +7,7 @@ default_executor = ThreadPoolExecutor()
 
 def run_in_executor(
         executor=default_executor,
-        condition=lambda *args, **kwargs: True):
+        condition=lambda *_, **__: True):
     """
     A decorator that runs the decorated function in an executor.
     :param executor: Optional. The executor to run the function in.
