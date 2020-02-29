@@ -1,11 +1,15 @@
 from sanic.response import json
 
+from worker_thread import run_in_executor
 
-async def add(request):
+
+@run_in_executor()
+def add(request):
     return json(sum(request.json))
 
 
-async def sub(request):
+@run_in_executor()
+def sub(request):
     a, b = request.json
     return json(a - b)
 
