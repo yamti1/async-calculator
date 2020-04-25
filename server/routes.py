@@ -1,3 +1,4 @@
+import math
 from sanic.response import json
 
 from worker_thread import run_in_executor
@@ -14,9 +15,15 @@ def sub(request):
     return json(a - b)
 
 
+@run_in_executor()
+def factorial(request):
+    return json(math.factorial(request.json))
+
+
 ROUTES = {
     "add": add,
     "sub": sub,
+    "factorial": factorial,
 }
 
 
